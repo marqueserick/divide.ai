@@ -25,4 +25,9 @@ public class UsuarioService {
         repository.salvar(usuario);
         return factory.toDto(usuario);
     }
+
+    public Usuario listar(String identificador) {
+        return repository.findByIdentificador(identificador).orElseThrow(
+                () -> new RuntimeException("Usuario não encontrado"));
+    }
 }

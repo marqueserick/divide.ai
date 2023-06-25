@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioDto {
+public class CartaoDto {
 
-    private String identificador;
+    private Long id;
     private String nome;
+    private String digitos;
+    private Integer vencimentoFatura;
 }

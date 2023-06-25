@@ -3,8 +3,8 @@ package com.emtech.divideAi.dominio;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name="usuario")
@@ -19,12 +19,13 @@ public class Usuario {
     private Long id;
 
     @Setter
-    private UUID identificador;
+    private String identificador;
 
     private String nome;
 
+    @Setter
     private Boolean isMestre;
 
-    @OneToMany
-    private List<Cartao> cartoes;
+    @OneToMany(mappedBy = "proprietario")
+    private List<Cartao> cartoes = new ArrayList<>();
 }
